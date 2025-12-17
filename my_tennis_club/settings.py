@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-qtzixaejnljrkf+txmqfnhux6gv8)pq#&k1ymyynio4lh&iv$^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "https://my-tennis-club-dpui.onrender.com/"]
+ALLOWED_HOSTS = ["127.0.0.1", "my-tennis-club-dpui.onrender.com"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://my-tennis-club-dpui.onrender.com"
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -48,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
