@@ -23,7 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qtzixaejnljrkf+txmqfnhux6gv8)pq#&k1ymyynio4lh&iv$^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+import os
+
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ["127.0.0.1", "my-tennis-club-dpui.onrender.com"]
 CSRF_TRUSTED_ORIGINS = [
